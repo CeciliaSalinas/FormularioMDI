@@ -1,6 +1,7 @@
 ﻿Public Class FrmVentas
+    'variable compartida , me dice si hay una instancia o no
     Public Shared primerInstancia As FrmVentas
-    Public Function getInstancia() As FrmVentas
+    Public Function getInstancia() As FrmVentas 'devuelve un objeto de tipo frmVentas
 
         If primerInstancia Is Nothing Then
             primerInstancia = New FrmVentas
@@ -11,7 +12,7 @@
 
     End Function
 
-    Public Sub ingresarDatos(productos As String)
+    Public Sub ingresarDatos(productos As String) 'parametro de tip string
         TxtProductos.Text = productos
     End Sub
     Private Sub FrmVentas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -19,12 +20,9 @@
     End Sub
 
     'este botón busca del formulario la listaDeproductos para seleccionar
+    'SHOWDIALOG,para que no podamos acceder a los formularios restantes inferiores
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim listaP As New FrmListaProductos
-        'Cuadro de dialogo modal: Los cuadros de diálogo modales requieren que los usuarios
-        'se completen y cierren antes de continuar con la ventana del propietario.
-        'Estos cuadros de diálogo se usan mejor para tareas críticas o poco frecuentes
-        'que requieren finalización antes de continuar.
         listaP.ShowDialog()
 
     End Sub

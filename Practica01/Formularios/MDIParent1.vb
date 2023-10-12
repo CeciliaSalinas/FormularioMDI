@@ -89,9 +89,10 @@ Public Class MDIParent1
     'en el menú desplegable y elijo la opacion
     Private Sub ListaDeProductosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListaDeProductosToolStripMenuItem.Click
 
-        Dim listaP As New FrmListaProductos
-        listaP.MdiParent = Me
-        listaP.Show()
+        Dim listaP As New FrmListaProductos 'creo una instancia de ese formulario
+        listaP.MdiParent = Me 'indicamos cual es el formulario padre de ese formulario listaP /
+        '                       'ME hacemos referencia a la clase
+        listaP.Show() ' Mostramos formulario con el mètodo show
     End Sub
 
     Private Sub CargarVentaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CargarVentaToolStripMenuItem.Click
